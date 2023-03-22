@@ -41,13 +41,14 @@ class ProductService{
     async getStockValue(){
         try {
             const product = await this.getStock()
-            const product_stock=product.reduce((totalValue,value)=>{
-                return (totalValue+value.valor_stock)
+            const product_stock = product.reduce((totalValue, value)=>{
+                return (totalValue + value.valor_stock)
             },0
             ).toFixed(2)
         return JSON.parse(product_stock)
+        
         } catch (error) {
-            
+            console.log("deu certo não tente novamente")
         }
     }
 }

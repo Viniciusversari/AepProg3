@@ -25,6 +25,11 @@ class productController{
 
         return res.json(stockValue)
     }
+
+    public async getReduce(red:Request,res:Response){
+        const getReduce = await productService.getStockValue()
+        return res.json(getReduce)
+    }
 }
 
 export default new productController();
